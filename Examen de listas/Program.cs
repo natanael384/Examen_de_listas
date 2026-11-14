@@ -27,25 +27,6 @@ namespace Examen_de_lista
                 Console.WriteLine("Opcion 8: Salir");
             }
 
-            static void Mostarproducto()
-            {
-                
-
-                if(Productos.Count == -1 || Precio.Count == -1)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("NO se encuentran productos en el inventario");
-                    Console.WriteLine();
-                }
-
-                for(int i = 0; i <= Productos.Count; i++)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"Producto: {Productos[i]} Precio: ${Precio[i]}");
-                    Console.WriteLine();
-                }
-            }
-
             static string AgregarProducto(string pro, double pre)
             {
 
@@ -73,6 +54,55 @@ namespace Examen_de_lista
                 return "Se agrego correctamente el producto";
 
             }
+
+            static void Mostarproducto()
+            {
+                
+
+                if(Productos.Count == -1 || Precio.Count == -1)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("NO se encuentran productos en el inventario");
+                    Console.WriteLine();
+                }
+
+                for(int i = 0; i <= Productos.Count; i++)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($" {i + 1} Producto: {Productos[i]} Precio: ${Precio[i]}");
+                    Console.WriteLine();
+                }
+            }
+
+            static void BuscarProducto(string Nombre)
+            {
+
+                int i = Productos.IndexOf(Nombre);
+
+
+
+                if (Nombre == "")
+                {
+                    Console.WriteLine($"El campo no puede estar vacio");
+                }
+
+                if (i == -1)
+                {
+                    Console.WriteLine($"El producto que intentas Buscar no se encuentra en el inventario");
+                }
+
+                if (Productos.Contains(Nombre) == false)
+                {
+
+                    Console.WriteLine($"El Producto: {Nombre} es invalido");
+                }
+
+                Console.WriteLine();
+                Console.WriteLine($"Producto: {Productos[i]} Precio: ${Precio[i]}");
+                Console.WriteLine();
+            }
+
+  
 
             static string MosdificarProducto(string actual, string nuevo, double pre)
             {
@@ -140,33 +170,65 @@ namespace Examen_de_lista
 
             }
 
-            static void BuscarProducto(string Nombre)
+
+
+            static void MostrarEstadistica()
+            {
+                int Minimo = 0;
+                int Maximo = 0;
+                double suma = 0;
+
+                for(int i = 0; i<= Precio.Count; i++)
+                {
+
+                    if (Precio[i] > Precio[Maximo]) Maximo = i;
+                    if (Precio[i] < Precio[Minimo]) Minimo = i;
+                    suma += Precio[i];
+
+                }
+
+
+                Console.WriteLine();
+                Console.WriteLine("===Estadistica===");
+                Console.WriteLine();
+                Console.WriteLine($"Total de Producto: {Productos.Count}");
+                Console.WriteLine($"Producto con Precio Mayor: {Productos[Maximo]} (${Precio[Maximo]})");
+                Console.WriteLine($"Producto con Precio Menor: {Productos[Minimo]} (${Precio[Minimo]})");
+                Console.WriteLine($"Promedio  de Precios: ${Precio.Average()}");
+                Console.WriteLine();
+
+            }
+
+            static void OrdenLista()
             {
 
-                int i = Productos.IndexOf(Nombre);
-
-          
-
-                if (Nombre == "")
+                if (Productos.Count == -1 || Precio.Count == -1)
                 {
-                    Console.WriteLine($"El campo no puede estar vacio");
+                    Console.WriteLine();
+                    Console.WriteLine("NO se encuentran productos en el inventario");
+                    Console.WriteLine();
                 }
 
-                if (i == -1)
+                List<int> index = new List<int>();
+                 
+                for(int i = 0;i<= Precio.Count; i++)
                 {
-                    Console.WriteLine($"El producto que intentas Buscar no se encuentra en el inventario");
+                    index.Add(i);
                 }
 
-                if(Productos.Contains(Nombre) == false)
+                index.Sort((a, b) => Precio[a].CompareTo(Precio[b]));
+
+                foreach(int i in index)
                 {
-
-                    Console.WriteLine($"El Producto: {Nombre} es invalido");
+                    Console.WriteLine();
+                    Console.WriteLine($"{i + 1} Producto: {Productos[i]} Precio: ${Precio[i]}");
+                    Console.WriteLine();
                 }
-
-                Console.WriteLine();
-                Console.WriteLine($"Producto: {Productos[i]} Precio: ${Precio[i]}");
-                Console.WriteLine();
             }
+
+
+
+            
 
 
 

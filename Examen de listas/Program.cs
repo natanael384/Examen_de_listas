@@ -46,33 +46,6 @@ namespace Examen_de_lista
                 }
             }
 
-            static string AgregarProducto(string pro, double pre)
-            {
-
-                if (Productos.Contains(pro) || Precio.Contains(pre))
-                {
-
-                    return "El producto que intentas agregar ya se encuentra en el inventario.";
-
-                }
-
-                if (pro == "")
-                {
-                    return "El campo no puede estar vacio";
-                }
-
-                if (pre <= 0)
-                {
-                    return "El campo precio debe contener valores positivos.";
-                }
-
-                Productos.Add(pro);
-                Precio.Add(pre);
-
-                return "Se agrego correctamente el producto";
-
-            }
-
 
 
         }

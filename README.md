@@ -1,4 +1,4 @@
-# Proyecto: Examen de Lista
+# Proyecto: Solución para una tienda de un barrio
 
  ### Descripción:
 Este proyecto permite agregar, mostrar, ordenar por lista, buscar, modificar, eliminar, mostrar estadistica de los productos de una tienda de un barrio.

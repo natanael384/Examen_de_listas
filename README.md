@@ -58,7 +58,7 @@ Este proyecto permite agregar, mostrar, ordenar por lista, buscar, modificar, el
 
 ---
 
-### Integrante: Raymond Nathanael Martinez Mota
+#### Integrante: Raymond Nathanael Martinez Mota
 
 
 

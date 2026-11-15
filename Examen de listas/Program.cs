@@ -6,6 +6,13 @@ namespace Examen_de_lista
 {
     class Program
     {
+        /*Una tienda de barrio necesita un programa de consola para llevar el inventario de sus productos*/
+
+        // Analisis
+        // Entrada:  Producto (nombre), Precio
+        // Proceso:  Agregar, Modificar, Buscar, Eliminar, Estadisticas
+        // Salida:   Mostrar productos, Estadisticas, Listas ordenadas, Busquedas, Resultados de operaciones
+
         static List<string> Productos = new List<string>();
         static List<double> Precio = new List<double>();
 
@@ -246,7 +253,7 @@ namespace Examen_de_lista
             Console.WriteLine($"Total de productos: {Productos.Count}");
             Console.WriteLine($"Producto con precio mayor: {Productos[maximo]} (${Precio[maximo]})");
             Console.WriteLine($"Producto con precio menor: {Productos[minimo]} (${Precio[minimo]})");
-            Console.WriteLine($"Promedio de precios: ${Precio.Average():F2}");
+            Console.WriteLine($"Promedio de precios: ${Precio.Average()}");
             Console.WriteLine();
         }
 

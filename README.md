@@ -1,4 +1,4 @@
-<img width="227" height="165" alt="image" src="https://github.com/user-attachments/assets/85a87688-3762-484c-9697-66bab8cf9c98" /># Proyecto: Examen de Lista
+# Proyecto: Examen de Lista
 
  ### Descripción:
 Este proyecto permite agregar, mostrar, ordenar por lista, buscar, modificar, eliminar, mostrar estadistica de los productos de una tienda de un barrio.
